@@ -1,8 +1,11 @@
-import React from 'react'
 
-const Grid = () => {
+const Grid = ({children}) => {
   return (
-    <div>Grid</div>
+    <div class="game-matrix-container center">
+      <div class="game-matrix">
+        {children}
+      </div>
+    </div>
   )
 }
 

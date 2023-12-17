@@ -1,15 +1,27 @@
 "use client";
 
 import { useEffect } from 'react';
-import PlayerCard from './(components)/PlayerCard';
+import PlayerCard from '@/components/PlayerCard';
 import { useGameContext } from '@/hooks/context';
 import { colors, avatars } from '@/constants';
+import { generatePoints, generateBoxes, generateLines } from '@/lib/utils';
 import Radio from '@/components/Radio';
 import Image from 'next/image';
 import Button from '@/components/Button';
 
 const Select = () => {
-  const { players, setPlayers, setPoints, setBoxes, setActive, setActivePlayer } = useGameContext();
+  const { 
+    players, 
+    setPlayers, 
+    setPoints, 
+    setBoxes, 
+    setLines, 
+    setActive, 
+    setActivePlayer,
+    points,
+    boxes,
+    lines
+  } = useGameContext();
 
   useEffect(() => {
     const initialiseGame = () => {
@@ -30,10 +42,16 @@ const Select = () => {
         },
       ]
       setPlayers(initialPlayers);
+      setBoxes(generateBoxes());
+      setPoints(generatePoints());
     };
 
     initialiseGame();
   }, []);
+
+  useEffect(()=>{
+    console.log(points,boxes);
+  }, [points])
 
 
 
