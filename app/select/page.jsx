@@ -49,15 +49,11 @@ const Select = () => {
     initialiseGame();
   }, []);
 
-  useEffect(()=>{
-    console.log(points,boxes);
-  }, [points])
-
 
 
   return (
-    <section className='w-full min-h-screen py-20 flex_center items-start'>
-      <div className="flex_center items-start flex-col gap-10">
+    <main className='w-full min-h-screen py-20 flex_center items-start'>
+      <section className="flex_center items-start flex-col gap-10">
         <h1 className="heading_2 text-center w-full">Configure Game</h1>
         <div className="flex_center gap-10 w-full">
           {players.map((player, index) => (
@@ -140,12 +136,11 @@ const Select = () => {
           ))}
         </div>
         <div className="flex_center gap-10 w-full">
-          {/* buttons */}
           <Button link={'/game'}>Play Game</Button>
           <Button link={'/'}>Cancel</Button>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
   )
 }
 
