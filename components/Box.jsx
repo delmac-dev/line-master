@@ -1,8 +1,15 @@
 import React from 'react'
 
-const Box = ({id, count, color, avatar, owner}) => {
+const Box = ({id, count, color, avatar, owner, size=50}) => {
   return (
-    <div class="box center" id = "box-${i}"></div>
+    <div 
+      style={{
+        width:`${size}px`,
+        height: `${size}px`
+      }}
+      clasName="relative" 
+      id = "box-${i}" 
+    ></div>
   )
 }
 

@@ -38,9 +38,19 @@ const Game = () => {
             />
           ))}
         </div>
-        <Grid>
-
-        </Grid>
+        <div className="flex_center gap-10 w-full">
+          <Grid>
+            {boxes.map((box)=>(
+              <Box key={box.id} {...box} />
+            ))}
+            {points.map((point)=> (
+              <Point key={point.id} {...point} />
+            ))}
+            {lines.map(()=>(
+              <Line />
+            ))}
+          </Grid>
+        </div>
         <div className="flex_center gap-10 w-full">
           <Button link={'/'}>Quit</Button>
           <Button link={'/select'}>Restart</Button>

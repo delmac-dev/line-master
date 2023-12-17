@@ -3,12 +3,12 @@ import React from 'react'
 const Point = ({id, top, left, pair, color, boxes}) => {
   return (
     <div 
-      className="point center activated" 
+      className="absolute w-4 aspect-square rounded-full border-2 border-primary transition-all duration-200 z-10 cursor-pointer" 
       id = "point-${i}" 
-      style={{top: `${pointList[i - 1].top}px`, left: `${pointList[i - 1].left}px`}} 
+      style={{top: `${top}px`, left: `${left}px`}} 
       onclick = {"selectPair(this)"}
     >
-      <span></span>
+      <span className='aspect-square w-2 rounded-full'></span>
     </div>
   )
 }
